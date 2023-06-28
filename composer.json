@@ -1,0 +1,15 @@
+{
+    "name": "maksim/php",
+    "autoload": {
+        "psr-4": {
+            "Main\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sline-X",
+            "email": "kipa.maksim99@gmail.com"
+        }
+    ],
+    "require": {}
+}
