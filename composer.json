@@ -11,5 +11,7 @@
             "email": "kipa.maksim99@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "monolog/monolog": "^3.4"
+    }
 }
