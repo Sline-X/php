@@ -2,6 +2,7 @@
 
 use Main\Zandstra\Chapter9\CluedUp;
 use Main\Zandstra\Chapter9\Employee;
+use Main\Zandstra\Chapter9\FactoryMethod\BloggsCommsManager;
 use Main\Zandstra\Chapter9\FactoryMethod\CommsManager;
 use Main\Zandstra\Chapter9\Minion;
 use Main\Zandstra\Chapter9\NastyBoss;
@@ -24,7 +25,12 @@ require __DIR__ .'/vendor/autoload.php';
 // $boss->projectFails();
 // $boss->projectFails();
 
-$man = new CommsManager(CommsManager::MEGA);
-print_r(get_class($man->getAppEncoder())) . "\n";
-$man = new CommsManager(CommsManager::BLOGGS);
-print_r(get_class($man->getAppEncoder())) . "\n";
+// $man = new CommsManager(CommsManager::MEGA);
+// print_r(get_class($man->getAppEncoder())) . "\n";
+// $man = new CommsManager(CommsManager::BLOGGS);
+// print_r(get_class($man->getAppEncoder())) . "\n";
+
+$mgr = new BloggsCommsManager();
+print $mgr->getHeaderText();
+print $mgr->getAppEncoder()->encode();
+print $mgr->getFooterText();
