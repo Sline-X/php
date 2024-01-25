@@ -12,26 +12,29 @@ class BloggsCommsManager extends CommsManager
     
     public function getHeaderText(): string
     {
-        return "BloggsCal header\n";
+        
+        return "Верхний колонтитул BloggsCal\n";
     }
     
-    public function getApptEncoder(): ApptEncoder
+    public function make(int $flag_int): Encoder
     {
-        return new BloggsApptEncoder();
-    }
-    
-    public function getTtdEncoder(): TtdEncoder
-    {
-        return new BloggsTtdEncoder();
-    }
-    
-    public function getContactEncoder(): ContactEncoder
-    {
-        return new BloggsContactEncoder();
+       switch ($flag_int)
+       {
+           case self::APPT:
+               return new BloggsApptEncoder();
+               
+           case self::CONTACT:
+               return new BloggsContactEncoder();
+               
+           case self::TTD:
+               return new BloggsTtdEncoder();
+       }
     }
     
     public function getFooterText(): string
     {
-        return "BloggsCal footer\n";
+        return "Нижний колонтитул BloggsCal\n";
     }
+    
+
 }
