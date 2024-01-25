@@ -6,6 +6,10 @@ use Main\Zandstra\Chapter9\FactoryMethod\BloggsCommsManager;
 use Main\Zandstra\Chapter9\FactoryMethod\CommsManager;
 use Main\Zandstra\Chapter9\Minion;
 use Main\Zandstra\Chapter9\NastyBoss;
+use Main\Zandstra\Chapter9\Prototype\EarthForest;
+use Main\Zandstra\Chapter9\Prototype\EarthPlains;
+use Main\Zandstra\Chapter9\Prototype\EarthSea;
+use Main\Zandstra\Chapter9\Prototype\TerrainFactory;
 
 require __DIR__ .'/vendor/autoload.php';
 
@@ -30,7 +34,18 @@ require __DIR__ .'/vendor/autoload.php';
 // $man = new CommsManager(CommsManager::BLOGGS);
 // print_r(get_class($man->getAppEncoder())) . "\n";
 
-$mgr = new BloggsCommsManager();
-print $mgr->getHeaderText();
-print $mgr->getAppEncoder()->encode();
-print $mgr->getFooterText();
+// $mgr = new BloggsCommsManager();
+// print $mgr->getHeaderText();
+// print $mgr->getAppEncoder()->encode();
+// print $mgr->getFooterText();
+
+
+//Prototype
+$factory = new TerrainFactory(
+    new EarthSea(-1),
+    new EarthPlains(),
+    new EarthForest(),
+);
+print_r($factory->getSea());
+print_r($factory->getPlains());
+print_r($factory->getForest());
