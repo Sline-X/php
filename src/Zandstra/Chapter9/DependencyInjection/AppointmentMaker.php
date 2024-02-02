@@ -3,14 +3,19 @@ declare(strict_types=1);
 
 namespace Main\Zandstra\Chapter9\DependencyInjection;
 
+use Main\Zandstra\Chapter9\FactoryMethod\ApptEncoder;
 use Main\Zandstra\Chapter9\FactoryMethod\BloggsApptEncoder;
 
 class AppointmentMaker
 {
+    private ApptEncoder $encoder;
+    #[Inject(ApptEncoder::class)]
+    public function setApptEncoder(ApptEncoder $encoder)
+    {
+        $this->encoder = $encoder;
+    }
     public function makeAppointment(): string
     {
-        //@TODO Variable $encoder is redundant. Refactor to: return (new BloggsApptEncoder())->encode();
-        $encoder = new BloggsApptEncoder();
-        return $encoder->encode();
+        return $this->encoder->encode();
     }
 }

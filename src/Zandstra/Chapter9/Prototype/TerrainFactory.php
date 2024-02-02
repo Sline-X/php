@@ -10,6 +10,7 @@ class TerrainFactory
      * @param \Main\Zandstra\Chapter9\Prototype\Plains $plains
      * @param \Main\Zandstra\Chapter9\Prototype\Forest $forest
      */
+    #[InjecConstructor(Sea::class, Plains::class, Forest::class)]
     public function __construct(
         private Sea $sea,
         private Plains $plains,

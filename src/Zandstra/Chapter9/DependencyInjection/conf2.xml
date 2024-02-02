@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<objects>
+    <class name="Main\Zandstra\Chapter9\FactoryMethod\ApptEncoder">
+        <instance inst="Main\Zandstra\Chapter9\FactoryMethod\BloggsApptEncoder" />
+    </class>
+    <class name="Main\Zandstra\Chapter9\Prototype\Sea">
+        <instance inst="Main\Zandstra\Chapter9\Prototype\EarthSea" />
+    </class>
+    <class name="Main\Zandstra\Chapter9\Prototype\Plains">
+        <instance inst="Main\Zandstra\Chapter9\Prototype\MarsPlains" />
+    </class>
+    <class name="Main\Zandstra\Chapter9\Prototype\Forest">
+        <instance inst="Main\Zandstra\Chapter9\Prototype\EarthForest" />
+    </class>
+</objects>
