@@ -3,4 +3,15 @@
     <class name="Main\Zandstra\Chapter9\FactoryMethod\ApptEncoder">
         <instance inst="Main\Zandstra\Chapter9\FactoryMethod\BloggsApptEncoder" />
     </class>
+    <class name="Main\Zandstra\Chapter9\Prototype\TerrainFactory">
+        <arg num="0" inst="Main\Zandstra\Chapter9\Prototype\EarthSea" />
+        <arg num="1" inst="Main\Zandstra\Chapter9\Prototype\MarsPlains" />
+        <arg num="2" inst="Main\Zandstra\Chapter9\Prototype\Forest" />
+    </class>
+    <class name="Main\Zandstra\Chapter9\Prototype\Forest">
+        <instance inst="Main\Zandstra\Chapter9\Prototype\EarthForest" />
+    </class>
+    <class name="Main\Zandstra\Chapter9\DependencyInjection\AppointmentMaker2">
+        <arg num="0" inst="Main\Zandstra\Chapter9\FactoryMethod\BloggsApptEncoder" />
+    </class>
 </objects>

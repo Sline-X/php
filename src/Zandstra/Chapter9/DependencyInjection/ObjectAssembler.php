@@ -18,8 +18,14 @@ class ObjectAssembler
 
         foreach ($data->class as $class)
         {
+            $args = [];
             $name = (string)$class['name'];
             $resolvednname = $name;
+            
+            foreach ($class->arg as $arg) {
+                $argclass = (string)$arg['inst'];
+                $args[(int)$arg['num']] = $argclass;
+            }
             
             if (isset($class->instance)) {
                 if (isset($class->instance[0]['inst'])) {
@@ -27,10 +33,17 @@ class ObjectAssembler
                 }
             }
             
-            $this->components[$name] = function () use ($resolvednname)
+            ksort($args);
+            
+            $this->components[$name] = function () use ($resolvednname, $args)
             {
+                $expandedargs = [];
+                
+                foreach ($args as $arg) {
+                    $expandedargs[] = $this->getComponent($arg);
+                }
                 $rclass = new \ReflectionClass($resolvednname);
-                return $rclass->newInstance();
+                return $rclass->newInstanceArgs($expandedargs);
             };
         }
     }
