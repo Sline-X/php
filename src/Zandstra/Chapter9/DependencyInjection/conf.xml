@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<objects>
+    <class name="Main\Zandstra\Chapter9\FactoryMethod\ApptEncoder">
+        <instance inst="Main\Zandstra\Chapter9\FactoryMethod\BloggsApptEncoder" />
+    </class>
+</objects>
