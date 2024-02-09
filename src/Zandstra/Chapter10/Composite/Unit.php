@@ -1,6 +1,6 @@
 <?php
 
-namespace Main\Zandstra\Chapter10;
+namespace Main\Zandstra\Chapter10\Composite;
 
 abstract class Unit
 {

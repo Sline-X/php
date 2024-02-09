@@ -1,9 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Main\Zandstra\Chapter10;
-
-use Main\Zandstra\Chapter10\Unit;
+namespace Main\Zandstra\Chapter10\Composite;
 
 abstract class CompositeUnit extends Unit
 {
@@ -24,7 +22,7 @@ abstract class CompositeUnit extends Unit
     }
     
     /**
-     * @throws \Main\Zandstra\Chapter10\UnitException
+     * @throws \Main\Zandstra\Chapter10\Composite\UnitException
      */
     public function removeUnit(Unit $unit): void
     {

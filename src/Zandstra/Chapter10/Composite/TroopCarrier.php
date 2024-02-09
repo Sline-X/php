@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace Main\Zandstra\Chapter10;
+namespace Main\Zandstra\Chapter10\Composite;
 
-use Main\Zandstra\Chapter10\CompositeUnit;
+use Main\Zandstra\Chapter10\Cavalry;
 
 class TroopCarrier extends CompositeUnit
 {
     /**
-     * @throws \Main\Zandstra\Chapter10\UnitException
+     * @throws \Main\Zandstra\Chapter10\Composite\UnitException
      */
     public function addUnit(Unit $unit): void
     {

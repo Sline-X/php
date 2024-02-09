@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Main\Zandstra\Chapter10;
+namespace Main\Zandstra\Chapter10\Composite;
 
 class UnitScript
 {

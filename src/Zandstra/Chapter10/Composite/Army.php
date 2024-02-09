@@ -1,6 +1,6 @@
 <?php
 
-namespace Main\Zandstra\Chapter10;
+namespace Main\Zandstra\Chapter10\Composite;
 
 class Army extends Unit
 {
@@ -10,7 +10,7 @@ class Army extends Unit
     private array $units = [];
     
     /**
-     * @param \Main\Zandstra\Chapter10\Unit $unit
+     * @param \Main\Zandstra\Chapter10\Composite\Unit $unit
      * @return void
      */
     public function addUnit(Unit $unit): void
@@ -36,7 +36,7 @@ class Army extends Unit
     }
     
     /**
-     * @param \Main\Zandstra\Chapter10\Unit $unit
+     * @param \Main\Zandstra\Chapter10\Composite\Unit $unit
      * @return void
      */
     public function removeUnit(Unit $unit): void

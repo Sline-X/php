@@ -1,8 +1,9 @@
 <?php
 
-use Main\Zandstra\Chapter10\Archer;
-use Main\Zandstra\Chapter10\Army;
-use Main\Zandstra\Chapter10\LaserCannonUnit;
+use Main\Zandstra\Chapter10\Composite\Archer;
+use Main\Zandstra\Chapter10\Composite\Army;
+use Main\Zandstra\Chapter10\Composite\LaserCannonUnit;
+use Main\Zandstra\Chapter10\Decorator\PollutedPlains;
 
 require __DIR__ .'/vendor/autoload.php';
 
@@ -23,3 +24,8 @@ $sub_army->addUnit(new Archer());
 $main_army->addUnit($sub_army);
 
 print "Атака с силой: {$main_army->bombardStrength()}\n";
+
+//decorator
+
+// $tile = new PollutedPlains();
+// print $tile->getWealthFactor();
