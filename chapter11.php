@@ -33,7 +33,7 @@ $context = new InterpreterContext();
 $input = new VariableExpression('input');
 $statement = new BooleanOrExpression(
     new BooleanEqualsExpression($input,
-    new LiteralExpression('четыре')),
+        new LiteralExpression('четыре')),
     new BooleanEqualsExpression($input, new LiteralExpression('4'))
 );
 
@@ -46,5 +46,27 @@ foreach (["четыре", "4", "52"] as $val) {
         print "Правильный ответ!\n\n";
     } else {
         print "Вы ошиблись!\n\n";
+    }
+}
+
+$markers = [
+    new \Main\Zandstra\Chapter11\Strategy\RegexpMarker("/п.ть/"),
+    new \Main\Zandstra\Chapter11\Strategy\MatchMarker("пять"),
+    new \Main\Zandstra\Chapter11\Strategy\MarkLogicMarker('$input equals "пять"')
+];
+
+foreach ($markers as $marker)
+{
+    print get_class($marker) . "\n";
+    $question = new \Main\Zandstra\Chapter11\Strategy\TextQuestion("сколько лучей у пятиконечной звезды", $marker);
+    
+    foreach (["пять", "четыре"] as $response) {
+        print " Ответ: $response: ";
+        
+        if ($question->mark($response)) {
+            print "Верно\n";
+        } else {
+            print "Неверно\n";
+        }
     }
 }
