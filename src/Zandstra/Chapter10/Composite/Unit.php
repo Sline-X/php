@@ -10,4 +10,15 @@ abstract class Unit
     }
     
     abstract public function bombardStrength(): int;
+    
+    public function textDump($num = 0): string
+    {
+        $txtout = "";
+        $pad = 4 * $num;
+        $txtout .= sprintf("%{$pad}s", "");
+        $txtout .= get_class($this) . ": ";
+        $txtout .= "Огневая мощь: "
+            . $this->bombardStrength() . "\n";
+        return $txtout;
+    }
 }
