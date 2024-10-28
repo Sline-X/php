@@ -33,3 +33,5 @@ if (preg_match('/path\\/to\\/file/i', 'path/to/file') ) {
 // echo preg_replace('[(/file)[0-9]+]i', '$1', '/file123.txt');
 
 echo preg_replace('/at/', 'AT', 'What is the Compatible Regex?');
+
+// /a[xXyY]c/ соответствует axc, aYc и т.д.
