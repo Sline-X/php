@@ -35,3 +35,8 @@ if (preg_match('/path\\/to\\/file/i', 'path/to/file') ) {
 echo preg_replace('/at/', 'AT', 'What is the Compatible Regex?');
 
 // /a[xXyY]c/ соответствует axc, aYc и т.д.
+
+//Простейший способ удаления тегов
+echo preg_replace('/<[^>]+>/', '', $text);
+
+// задание, как будут выглядет квантификаторы *, + и ? в терминах {...}
