@@ -40,3 +40,24 @@ echo preg_replace('/at/', 'AT', 'What is the Compatible Regex?');
 echo preg_replace('/<[^>]+>/', '', $text);
 
 // задание, как будут выглядет квантификаторы *, + и ? в терминах {...}
+
+
+$str = " 15-16/2000       ";
+$re = '{
+  ^\s*(    #начало строки
+    (\d+)    #день
+      \s* [[:punct:]] \s*    #разделитель
+    (\d+)    #месяц
+      \s* [[:punct:]] \s*    #разделитель
+    (\d+)    #год
+  )\s*$    #конец строки
+}xs';
+
+//разбиваем строку на куски
+preg_match($re, $str, $matches) or exit("Not a date: $str");
+
+//Теперь разбираемся с карманами
+echo "Дата без пробелов: '$matches[1]' <br />";
+echo "День: $matches[2] <br />";
+echo "Месяц: $matches[3] <br />";
+echo "Год: $matches[4] <br />";
