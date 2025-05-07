@@ -83,3 +83,16 @@ preg_replace($re, $str, $matches) or exit('Соответствие не най�
 echo htmlspecialchars('День: ' . $matches[1]);
 
 //именованные карманы
+$str = '2022-07-15';
+$re = '|^<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})$|';
+preg_match($re, $str, $matches) or exit('Соответствие не найдено');
+echo 'День: '  . $matches['day']   . '<br />';
+echo 'Месяц: ' . $matches['month'] . '<br />';
+echo 'Год: '   . $matches['year']  . '<br />';
+
+//Жадные квантификаторы 28.10
+$str = 'Hello, this <b>word</b> is <b>bold</b>!';
+$re = '|<(\w+) [^>]* > (.*) </\1>|xs';
+preg_match($re, $str, $matches) or exit('Нет тегов.');
+echo htmlspecialchars("'$matches[2]' обрамлено тегом '$matches[1]'");
+//'word</b> is <b>bold' обрамлено тегом 'b'
