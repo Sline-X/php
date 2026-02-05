@@ -68,7 +68,7 @@ class ShopProduct
         $this->id = $id;
     }
     
-    public static function getInstance(int $id, \PDO $pdo): ShopProduct
+    public static function getInstance(int $id, \PDO $pdo): ShopProduct|null
     {
         $stmt = $pdo->prepare("select * from products where id=?");
         $result = $stmt->execute([$id]);
